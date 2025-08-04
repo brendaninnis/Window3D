@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckm3v4q5u8dh2"]
+
+[ext_resource type="Script" path="res://addons/window3d/examples/sample_ui_with_script.gd" id="1_h3k7j"]
+
+[node name="SampleUIWithScript" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3k7j")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "Interactive Window3D Demo"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Content"]
+layout_mode = 2
+text = "Click the buttons below to test 3D window interaction!"
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="ActionButton" type="Button" parent="Content"]
+layout_mode = 2
+text = "Test Action"
+
+[node name="CountLabel" type="Label" parent="Content"]
+layout_mode = 2
+text = "Button clicks: 0"
+
+[node name="HSeparator3" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Content"]
+layout_mode = 2
+text = "Enable debug mode"
+
+[node name="HSlider" type="HSlider" parent="Content"]
+layout_mode = 2
+value = 50.0
+
+[node name="SliderLabel" type="Label" parent="Content"]
+layout_mode = 2
+text = "Slider value: 50"
+
+[connection signal="pressed" from="Content/ActionButton" to="." method="_on_action_button_pressed"]
+[connection signal="toggled" from="Content/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="value_changed" from="Content/HSlider" to="." method="_on_slider_value_changed"]

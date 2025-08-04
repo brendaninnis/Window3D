@@ -1,0 +1,22 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Controller/Pointer Device -->
+<ellipse cx="3" cy="12" rx="2" ry="1.5" fill="#4a90e2" opacity="0.8"/>
+<rect x="2" y="10" width="2" height="3" rx="0.5" fill="#ffffff" stroke="#4a90e2" stroke-width="0.5"/>
+
+<!-- Raycast Beam -->
+<line x1="4" y1="10" x2="13" y2="4" stroke="#4a90e2" stroke-width="2" opacity="0.7"/>
+<line x1="4" y1="10" x2="13" y2="4" stroke="#ffffff" stroke-width="1"/>
+
+<!-- Interaction Points/Particles -->
+<circle cx="7" cy="7.5" r="0.8" fill="#4a90e2" opacity="0.5"/>
+<circle cx="9.5" cy="6" r="0.6" fill="#4a90e2" opacity="0.7"/>
+<circle cx="11.5" cy="4.8" r="0.4" fill="#ffffff"/>
+
+<!-- Target Crosshair -->
+<circle cx="13" cy="4" r="1.5" stroke="#ffffff" stroke-width="1.2" fill="none"/>
+<line x1="11.8" y1="4" x2="14.2" y2="4" stroke="#ffffff" stroke-width="1"/>
+<line x1="13" y1="2.8" x2="13" y2="5.2" stroke="#ffffff" stroke-width="1"/>
+
+<!-- Small directional indicator -->
+<polygon points="12,3.2 12.8,3.8 12,4.4" fill="#4a90e2"/>
+</svg>

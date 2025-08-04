@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bslx4h7m1j2k6"]
+
+[node name="SampleUI" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "Window3D Plugin Demo"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Content"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+text = "This is a 3D window created with the Window3D plugin! You can interact with it using VR controllers or mouse raycasts."
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Button 1"
+
+[node name="Button2" type="Button" parent="Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Button 2"
+
+[node name="HSeparator3" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Content"]
+layout_mode = 2
+text = "Enable feature"
+
+[node name="HSlider" type="HSlider" parent="Content"]
+layout_mode = 2
+value = 50.0
+
+[node name="HSeparator4" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Content"]
+layout_mode = 2
+placeholder_text = "Enter text here..."
