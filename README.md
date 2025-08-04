@@ -1,4 +1,4 @@
-# Window3D Plugin
+# Window3D Godot Plugin
 
 A 3D windowing system for Godot 4 designed for VR/AR applications with raycast-based interaction.
 
@@ -25,7 +25,7 @@ Transform any Godot UI into an interactive 3D window that can be placed in your 
 ### Option 2: Git Submodule (Recommended)
 ```bash
 # Add as submodule in your project
-git submodule add https://github.com/yourusername/window3d-plugin.git addons/window3d
+git submodule add https://github.com/brendaninnis/Window3D.git addons/window3d
 
 # Initialize and update
 git submodule update --init --recursive
