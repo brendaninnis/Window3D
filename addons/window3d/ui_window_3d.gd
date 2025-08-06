@@ -43,6 +43,33 @@ signal window_clicked(point: Vector3)
 signal window_hovered(point: Vector3)
 signal window_dragged(window: UIWindow3D, point: Vector3)
 
+# Static lookup table for interactive control types (O(1) performance)
+static var _interactive_control_types := {
+	"Button": true,
+	"CheckBox": true,
+	"OptionButton": true,
+	"Slider": true,
+	"SpinBox": true,
+	"TextEdit": true,
+	"LineEdit": true,
+	"TabContainer": true,
+	"ItemList": true,
+	"Tree": true,
+	"HScrollBar": true,
+	"VScrollBar": true,
+	"HSlider": true,
+	"VSlider": true,
+	"Range": true,
+	"MenuButton": true,
+	"PopupMenu": true,
+	"ColorPicker": true,
+	"FileDialog": true,
+	"CodeEdit": true,
+	"RichTextLabel": true,
+	"GraphEdit": true,
+	"GraphNode": true,
+}
+
 var window_mesh: MeshInstance3D
 var collision_shape: CollisionShape3D
 var viewport: SubViewport
@@ -65,33 +92,6 @@ var is_dragged: bool = false:
 			drag_offset = Vector3.ZERO
 var drag_offset: Vector3 = Vector3.ZERO
 
-# Static lookup table for interactive control types (O(1) performance)
-static var _interactive_control_types := {
-	"Button": true,
-	"CheckBox": true, 
-	"OptionButton": true,
-	"Slider": true,
-	"SpinBox": true,
-	"TextEdit": true,
-	"LineEdit": true,
-	"TabContainer": true,
-	"ItemList": true,
-	"Tree": true,
-	"HScrollBar": true,
-	"VScrollBar": true,
-	"HSlider": true,
-	"VSlider": true,
-	"Range": true,
-	"MenuButton": true,
-	"PopupMenu": true,
-	"ColorPicker": true,
-	"FileDialog": true,
-	"CodeEdit": true,
-	"RichTextLabel": true,
-	"GraphEdit": true,
-	"GraphNode": true
-}
-
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		_setup_window()
@@ -112,7 +112,10 @@ func _validate_configuration() -> bool:
 		push_error("UIWindow3D: pixels_per_meter too low, minimum is 50")
 		return false
 	if pixels_per_meter > 2000:
-		push_warning("UIWindow3D: pixels_per_meter very high (%d), may impact performance" % pixels_per_meter)
+		push_warning(
+				"UIWindow3D: pixels_per_meter very high (%d), may impact performance"
+				% pixels_per_meter
+		)
 	return true
 
 func set_width(value: float):
@@ -314,7 +317,7 @@ func _convert_global_point_to_viewport(point: Vector3) -> Vector2:
 func get_debug_info() -> String:
 	var info = "UIWindow3D Debug Info:\n"
 	info += "Size: %s x %s meters\n" % [width, height]
-	info += "Viewport Size: %s\n" % [viewport.size if viewport else "None"]
+	info += "Viewport Size: %s\n" % [str(viewport.size) if viewport else "None"]
 	info += "Is Clicked: %s\n" % is_clicked
 	info += "Is Dragged: %s\n" % is_dragged
 	var ui_root = _find_ui_root()
