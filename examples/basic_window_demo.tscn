@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://de1ucc2u6c46n"]
+
+[ext_resource type="Script" uid="uid://bpalb06unu3qd" path="res://addons/window3d/ui_window_3d.gd" id="1_8xq2g"]
+[ext_resource type="Script" uid="uid://d2wntuyjx1yjv" path="res://addons/window3d/examples/basic_window_demo.gd" id="3_45d1g"]
+
+[node name="BasicWindowDemo" type="Node3D"]
+script = ExtResource("3_45d1g")
+
+[node name="UIWindow3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+script = ExtResource("1_8xq2g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0, 2, 2)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707, -0.5, 0.5, 0, 0.707, 0.707, -0.707, -0.5, 0.5, 0, 2, 0)
+
+[node name="LoadUITimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LoadUITimer" to="." method="_on_load_ui_timer_timeout"]
