@@ -22,15 +22,6 @@ Transform any Godot UI into an interactive 3D window that can be placed in your 
 3. Go to **Project Settings > Plugins**
 4. Enable the **"Window3D"** plugin
 
-### Option 2: Git Submodule (Recommended)
-```bash
-# Add as submodule in your project
-git submodule add https://github.com/brendaninnis/Window3D.git addons/window3d
-
-# Initialize and update
-git submodule update --init --recursive
-```
-
 Then enable the plugin in **Project Settings > Plugins**.
 
 ## Quick Start
